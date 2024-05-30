@@ -1,0 +1,115 @@
+/* ------------------------------- typography ------------------------------- */
+:root {
+  --font-body-sm: 400 0.875rem/1.43 var(--font-family-open-sans);
+  --font-body-md: 400 1rem/1.5 var(--font-family-open-sans);
+  --font-label-sm: 500 0.75rem/1.33 var(--font-family-open-sans);
+  --font-label-md: 500 0.875rem/1.43 var(--font-family-open-sans);
+  --font-label-lg: 500 1rem/1.25 var(--font-family-open-sans);
+  --font-heading-sm: 600 1.5rem/1.33 var(--font-family-open-sans);
+  --font-heading-md: 600 1.75rem/1.29 var(--font-family-open-sans);
+  --font-heading-lg: 600 2rem/1.25 var(--font-family-open-sans);
+  --font-display-sm: 700 2.25rem/1.22 var(--font-family-open-sans);
+  --font-display-md: 700 2.8125rem/1.16 var(--font-family-open-sans);
+  --font-display-lg: 700 3.5rem/1.14 var(--font-family-open-sans);
+}
+
+/* --------------------------------- layout --------------------------------- */
+:root {
+  --wrapper-width-xs: 22rem; /* 320px */
+  --wrapper-width-sm: 40rem; /* 640px */
+  --wrapper-width-md: 48rem; /* 768px */
+  --wrapper-width-lg: 64rem; /* 1024px */
+  --wrapper-width-xl: 80rem; /* 1280px */
+}
+
+/* --------------------------------- colors --------------------------------- */
+:root,
+:root.dark {
+  /* General */
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Primary */
+  --color-primary-light: #5c9dff;
+  --color-primary-normal: #3385ff;
+  --color-primary-strong: #296acc;
+
+  /* Text */
+  --color-text-normal: rgba(247, 247, 248, 1);
+  --color-text-strong: rgba(255, 255, 255, 1);
+  --color-text-neutral: rgba(194, 196, 200, 0.8799999952316284);
+  --color-text-alternative: rgba(174, 176, 182, 0.6100000143051147);
+  --color-text-assistive: rgba(174, 176, 182, 0.2800000011920929);
+  --color-text-disable: rgba(152, 155, 162, 0.1599999964237213);
+
+  /* Background */
+  --color-background-normal: rgba(27, 28, 30, 1);
+  --color-background-alternative: rgba(15, 15, 16, 1);
+
+  /* Line */
+  --color-line-normal: rgba(112, 115, 124, 0.3199999928474426);
+  --color-line-neutral: rgba(112, 115, 124, 0.2800000011920929);
+  --color-line-alternative: rgba(112, 115, 124, 0.2199999988079071);
+
+  /* Status */
+  --color-status-positive: rgba(30, 212, 90, 1);
+  --color-status-cautionary: rgba(255, 169, 56, 1);
+  --color-status-destructive: rgba(255, 99, 99, 1);
+
+  /* Fill */
+  --color-fill-normal: rgba(112, 115, 124, 0.2199999988079071);
+  --color-fill-strong: rgba(112, 115, 124, 0.2800000011920929);
+  --color-fill-alternative: rgba(112, 115, 124, 0.11999999731779099);
+
+  /* Accent */
+  --color-accent-red-orange: rgba(255, 123, 46, 1);
+  --color-accent-lime: rgba(107, 224, 22, 1);
+  --color-accent-cyan: rgba(0, 189, 222, 1);
+  --color-accent-blue: rgba(61, 194, 255, 1);
+  --color-accent-violet: rgba(125, 94, 247, 1);
+  --color-accent-purple: rgba(212, 120, 255, 1);
+  --color-accent-pink: rgba(250, 115, 227, 1);
+}
+
+:root.light {
+  /* Primary */
+  --color-primary-light: #3385ff;
+  --color-primary-normal: #0066ff;
+  --color-primary-strong: #0052cc;
+
+  /* Text */
+  --color-text-normal: #161618;
+  --color-text-strong: #000000;
+  --color-text-neutral: #47484c;
+  --color-text-alternative: #848588;
+  --color-text-assistive: #c7c8c9;
+  --color-text-disable: #dfdfe0;
+
+  /* Background */
+  --color-background-alternative: #f7f7f8;
+  --color-background-normal: #ffffff;
+
+  /* Line */
+  --color-line-normal: rgba(112, 115, 124, 0.2199999988079071);
+  --color-line-neutral: rgba(112, 115, 124, 0.1599999964237213);
+  --color-line-alternative: rgba(112, 115, 124, 0.07999999821186066);
+
+  /* Status */
+  --color-status-positive: rgba(0, 191, 64, 1);
+  --color-status-cautionary: rgba(255, 146, 0, 1);
+  --color-status-destructive: rgba(255, 66, 66, 1);
+
+  /* Fill */
+  --color-fill-normal: rgba(112, 115, 124, 0.07999999821186066);
+  --color-fill-strong: rgba(112, 115, 124, 0.1599999964237213);
+  --color-fill-alternative: rgba(112, 115, 124, 0.05000000074505806);
+
+  /* Accent */
+  --color-accent-red-orange: rgba(255, 93, 0, 1);
+  --color-accent-lime: rgba(88, 207, 4, 1);
+  --color-accent-cyan: rgba(0, 189, 222, 1);
+  --color-accent-blue: rgba(0, 174, 255, 1);
+  --color-accent-violet: rgba(101, 65, 242, 1);
+  --color-accent-purple: rgba(203, 89, 255, 1);
+  --color-accent-pink: rgba(245, 83, 218, 1);
+}
