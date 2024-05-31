@@ -14,8 +14,8 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html className="dark">
-      <body className={openSans.className}>{children}</body>
+    <html className={`${openSans.variable} dark`}>
+      <body>{children}</body>
     </html>
   );
 };

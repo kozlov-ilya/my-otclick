@@ -1,0 +1,126 @@
+/* -------------------------------------------------------------------------- */
+/*                                  TextField                                 */
+/* -------------------------------------------------------------------------- */
+.TextField {
+  --textfield-transition: 80ms linear;
+
+  position: relative;
+  height: var(--textfield-height);
+  padding: var(--textfield-padding);
+  border-radius: var(--textfield-radius, 8px);
+  background: var(--textfield-background);
+
+  font: var(--textfield-font);
+
+  transition: background var(--textfield-transition);
+}
+
+/* --------------------------------- variant -------------------------------- */
+.TextField_variant_outline {
+  --textfield-border: 1.5px solid
+    var(--textfield-border-color, var(--color-line-normal));
+  --textfield-background: transparent;
+
+  &:focus-within {
+    --textfield-border-color: var(--color-text-normal);
+  }
+}
+
+.TextField_variant_fill {
+  --textfield-border: none;
+  --textfield-background: var(--color-fill-normal);
+
+  &:focus-within {
+    --textfield-background: var(--color-fill-strong);
+  }
+}
+
+/* ---------------------------------- size ---------------------------------- */
+.TextField_size_sm {
+  --textfield-height: 36px;
+  --textfield-padding: 6px 12px;
+  --textfield-font: var(--font-body-sm);
+}
+
+.TextField_size_md {
+  --textfield-height: 40px;
+  --textfield-padding: 8px 16px;
+  --textfield-font: var(--font-body-md);
+}
+
+.TextField_size_lg {
+  --textfield-height: 48px;
+  --textfield-padding: 12px 16px;
+  --textfield-font: var(--font-body-md);
+}
+
+/* --------------------------------- rounded -------------------------------- */
+.TextField_rounded {
+  --textfield-radius: 100px;
+}
+
+/* --------------------------------- status --------------------------------- */
+.TextField_status_error {
+  --textfield-border-color: var(--color-status-destructive);
+}
+
+.TextField_status_success {
+  --textfield-border-color: var(--color-status-positive);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Label                                   */
+/* -------------------------------------------------------------------------- */
+.Label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Control                                  */
+/* -------------------------------------------------------------------------- */
+.Control {
+  flex-grow: 1;
+
+  position: relative;
+  z-index: 1;
+
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: inherit;
+
+  &::placeholder {
+    color: var(--color-text-assistive);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                     Box                                    */
+/* -------------------------------------------------------------------------- */
+.Box {
+  position: absolute;
+  inset: 0;
+
+  border: var(--textfield-border);
+  border-radius: var(--textfield-radius, 8px);
+
+  cursor: text;
+
+  transition: border var(--textfield-transition);
+}
+
+.ContentLeft {
+  color: var(--textfield-border-color, var(--color-text-assistive));
+  font-size: 20px;
+
+  pointer-events: none;
+
+  transition: color var(--textfield-transition);
+}
