@@ -1,7 +1,10 @@
-import { Button } from "@/components/basic/Button/Button";
-import { TextField } from "@/components/basic/TextField/TextField";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
+import { LuKeyRound } from "react-icons/lu";
+
+import { Button } from "@/components/basic/Button/Button";
+import { TextField } from "@/components/basic/TextField/TextField";
+import { FormField } from "@/components/basic/FormField/FormField";
 
 import styles from "./page.module.css";
 
@@ -46,6 +49,22 @@ const UiPage = (props: UiPageProps) => {
             contentLeft={<IoSearch />}
             placeholder="Search"
           />
+        </UiGroup>
+        <UiGroup label="FormField">
+          <FormField label="Email" message="Email registered" status="success">
+            <TextField
+              status="success"
+              contentLeft={<FaRegEnvelope />}
+              defaultValue="1loveschool@mail.ru"
+            />
+          </FormField>
+          <FormField label="Password" message="Invalid password" status="error">
+            <TextField
+              status="error"
+              contentLeft={<LuKeyRound />}
+              type="password"
+            />
+          </FormField>
         </UiGroup>
       </div>
     </div>
