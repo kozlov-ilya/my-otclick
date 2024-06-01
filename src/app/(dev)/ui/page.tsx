@@ -5,6 +5,7 @@ import { LuKeyRound } from "react-icons/lu";
 import { Button } from "@/components/basic/Button/Button";
 import { TextField } from "@/components/basic/TextField/TextField";
 import { FormField } from "@/components/basic/FormField/FormField";
+import { Link } from "@/components/basic/Link/Link";
 
 import styles from "./page.module.css";
 
@@ -65,6 +66,12 @@ const UiPage = (props: UiPageProps) => {
               type="password"
             />
           </FormField>
+        </UiGroup>
+        <UiGroup label="Link">
+          <Link href={"/"}>Link</Link>
+          <Link href={"/"} role="secondary">
+            Link
+          </Link>
         </UiGroup>
       </div>
     </div>
