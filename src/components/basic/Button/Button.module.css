@@ -1,0 +1,147 @@
+/* -------------------------------------------------------------------------- */
+/*                                   Button                                   */
+/* -------------------------------------------------------------------------- */
+.Button {
+  --button-transition: 80ms linear;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  position: relative;
+
+  min-width: var(--button-height);
+  height: var(--button-height);
+  padding: 0 var(--button-out-gap);
+  border: var(--button-border);
+  border-radius: var(--button-radius, 8px);
+  margin: 0;
+  outline: none;
+  background: var(--button-background);
+  overflow: hidden;
+
+  font: var(--font-label-md);
+  color: var(--button-text-color);
+
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--button-interaction-bg);
+
+    opacity: 0;
+
+    transition: opacity var(--button-transition);
+  }
+
+  &:hover::before {
+    opacity: 0.075;
+  }
+
+  &:active::before {
+    opacity: 0.12;
+  }
+
+  &:focus-visible::before {
+    opacity: 0.08;
+  }
+  &:active::before {
+    opacity: 0.12;
+  }
+
+  &:disabled {
+    opacity: 0.43;
+
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* ----------------------------- variant & role ----------------------------- */
+.Button_variant_solid {
+  --button-border: none;
+
+  &.Button_role_primary {
+    --button-background: var(--color-primary-normal);
+    --button-interaction-bg: var(--color-black);
+    --button-text-color: var(--color-white);
+  }
+
+  &.Button_role_secondary {
+    --button-background: var(--color-fill-strong);
+    --button-interaction-bg: var(--color-text-normal);
+    --button-text-color: var(--color-text-normal);
+  }
+}
+
+.Button_variant_outline {
+  --button-background: transparent;
+  --button-border: 1.5px solid var(--color-line-normal);
+  --button-interaction-bg: var(--color-text-normal);
+
+  &.Button_role_primary {
+    --button-text-color: var(--color-text-normal);
+  }
+
+  &.Button_role_secondary {
+    --button-text-color: var(--color-text-alternative);
+  }
+}
+
+.Button_variant_ghost {
+  --button-background: transparent;
+  --button-border: none;
+  --button-interaction-bg: var(--color-text-normal);
+
+  &.Button_role_primary {
+    --button-text-color: var(--color-text-normal);
+  }
+
+  &.Button_role_secondary {
+    --button-text-color: var(--color-text-alternative);
+  }
+}
+
+/* ---------------------------------- size ---------------------------------- */
+.Button_size_sm {
+  --button-height: 36px;
+  --button-out-gap: 8px;
+}
+
+.Button_size_md {
+  --button-height: 40px;
+  --button-out-gap: 16px;
+}
+
+.Button_size_lg {
+  --button-height: 48px;
+  --button-out-gap: 20px;
+}
+
+/* --------------------------------- rounded -------------------------------- */
+.Button_rounded {
+  --button-radius: 100px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Icon                                    */
+/* -------------------------------------------------------------------------- */
+.Icon {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Text                                    */
+/* -------------------------------------------------------------------------- */
+.Text {
+  flex-grow: 1;
+
+  position: relative;
+}

@@ -15,11 +15,11 @@
 
 /* --------------------------------- layout --------------------------------- */
 :root {
-  --wrapper-width-xs: 22rem; /* 320px */
-  --wrapper-width-sm: 40rem; /* 640px */
-  --wrapper-width-md: 48rem; /* 768px */
-  --wrapper-width-lg: 64rem; /* 1024px */
-  --wrapper-width-xl: 80rem; /* 1280px */
+  --wrapper-width-xs: calc(22rem + 2rem); /* 320px */
+  --wrapper-width-sm: calc(40rem + 2rem); /* 640px */
+  --wrapper-width-md: calc(48rem + 2rem); /* 768px */
+  --wrapper-width-lg: calc(64rem + 2rem); /* 1024px */
+  --wrapper-width-xl: calc(80rem + 2rem); /* 1280px */
 }
 
 /* --------------------------------- colors --------------------------------- */

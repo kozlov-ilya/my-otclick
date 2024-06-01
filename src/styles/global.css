@@ -33,7 +33,7 @@ html {
 body {
   min-height: 100svh;
   margin: 0;
-  background: var(--color-background-alternative);
+  background: var(--color-background-normal);
 
   font: var(--font-body-md);
   color: var(--color-text-normal);
