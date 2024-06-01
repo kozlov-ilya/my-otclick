@@ -1,0 +1,72 @@
+.PostCard {
+  --postcard-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  position: relative;
+
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: var(--postcard-radius);
+  margin-block: 4px;
+  background: transparent;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  /* transition: background 80ms linear; */
+
+  &:hover {
+    background: var(--color-fill-alternative);
+  }
+}
+
+.PostBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (width > 768px) {
+    gap: 12px;
+  }
+}
+
+.Title {
+  font: var(--font-label-lg);
+
+  @media screen and (width > 768px) {
+    font: var(--font-heading-sm);
+  }
+}
+
+.Text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  font: var(--font-body-sm);
+  color: var(--color-text-neutral);
+
+  @media screen and (width > 768px) {
+    -webkit-line-clamp: 6;
+  }
+}
+
+.Link {
+  position: absolute;
+  inset: 0;
+
+  border-radius: var(--postcard-radius);
+}
+
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  z-index: 1;
+}

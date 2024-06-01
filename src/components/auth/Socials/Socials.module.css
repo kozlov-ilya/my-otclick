@@ -1,0 +1,31 @@
+.Socials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font: var(--font-label-sm);
+  color: var(--color-line-normal);
+
+  user-select: none;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 1.5px;
+    width: 100%;
+    background: var(--color-line-normal);
+  }
+}
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

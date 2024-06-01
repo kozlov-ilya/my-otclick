@@ -1,5 +1,7 @@
 import { Open_Sans } from "next/font/google";
 
+import { Providers } from "@/Providers";
+
 import "@/styles/global.css";
 
 const openSans = Open_Sans({
@@ -14,8 +16,10 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html className={`${openSans.variable} dark`}>
-      <body>{children}</body>
+    <html className={`${openSans.variable}`} suppressHydrationWarning>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 };

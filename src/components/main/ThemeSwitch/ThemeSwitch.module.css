@@ -1,0 +1,17 @@
+.ThemeSwitch {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  gap: 12px;
+}
+
+.Icon {
+  font-size: 20px;
+}
+
+.Text {
+  flex-grow: 1;
+}

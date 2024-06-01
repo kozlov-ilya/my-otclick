@@ -1,0 +1,40 @@
+.Container {
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "main main";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+
+  position: relative;
+
+  min-height: 100svh;
+
+  @media screen and (width > 1200px) {
+    grid-template-areas:
+      "head head"
+      "side main";
+  }
+}
+
+.Sidebar {
+  display: none;
+  grid-area: side;
+
+  @media screen and (width > 1200px) {
+    display: block;
+  }
+}
+
+.Header {
+  grid-area: head;
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.MainContent {
+  grid-area: main;
+  margin-top: 16px;
+}

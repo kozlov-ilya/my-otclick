@@ -1,0 +1,13 @@
+.PostsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.Container {
+  padding-inline: 16px;
+
+  @media screen and (width > 768) {
+    padding-inline: 0;
+  }
+}

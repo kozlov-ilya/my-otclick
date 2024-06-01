@@ -1,0 +1,18 @@
+.HeaderSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  height: 56px;
+  width: 100%;
+  padding-inline: 16px;
+  border-bottom: 1.5px solid var(--color-line-normal);
+  background: var(--color-background-normal);
+}
+
+.Avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-fill-normal);
+}

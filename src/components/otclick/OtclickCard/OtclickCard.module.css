@@ -1,0 +1,66 @@
+.OtclickCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 100%;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  min-height: 32px;
+}
+
+.Info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.AuthorInfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  position: relative;
+  z-index: 1;
+}
+
+.AuthorTextInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AuthorUsername {
+  font: var(--font-label-sm);
+  color: var(--color-text-neutral);
+}
+
+.Controls {
+  display: flex;
+  gap: 8px;
+}
+
+.Body {
+  padding-inline: 32px;
+}
+
+.Message {
+  font: var(--font-body-sm);
+}
+
+.PostLink {
+  font: var(--font-label-sm);
+
+  color: var(--color-text-neutral);
+
+  &:hover {
+    color: var(--color-text-normal);
+  }
+}

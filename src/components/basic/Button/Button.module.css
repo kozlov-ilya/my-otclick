@@ -11,6 +11,7 @@
 
   position: relative;
 
+  width: var(--button-width, auto);
   min-width: var(--button-height);
   height: var(--button-height);
   padding: 0 var(--button-out-gap);
@@ -23,6 +24,7 @@
 
   font: var(--font-label-md);
   color: var(--button-text-color);
+  text-decoration: none;
 
   cursor: pointer;
   user-select: none;
@@ -121,7 +123,7 @@
 
 .Button_size_lg {
   --button-height: 48px;
-  --button-out-gap: 20px;
+  --button-out-gap: 16px;
 }
 
 /* --------------------------------- rounded -------------------------------- */
@@ -129,11 +131,16 @@
   --button-radius: 100px;
 }
 
+/* -------------------------------- fullWidth ------------------------------- */
+.Button_width_full {
+  --button-width: 100%;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                    Icon                                    */
 /* -------------------------------------------------------------------------- */
 .Icon {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
 }
 

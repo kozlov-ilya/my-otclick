@@ -1,0 +1,33 @@
+.Chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 4px 8px;
+
+  background: var(--chip-background, var(--color-fill-normal));
+  border-radius: 100px;
+
+  font: var(--font-body-sm);
+  color: var(--color-text-normal);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: width 80ms linear;
+
+  &:hover {
+    --chip-background: var(--color-fill-strong);
+  }
+
+  &[data-checked="true"] {
+    --chip-background: var(--color-primary-normal);
+    color: var(--color-white);
+  }
+}
+
+.Chip_disabled {
+  pointer-events: none;
+
+  color: var(--color-text-neutral);
+}

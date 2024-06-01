@@ -1,0 +1,63 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  padding: 16px;
+
+  @media screen and (width > 768px) {
+    padding: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Post                                    */
+/* -------------------------------------------------------------------------- */
+
+.Post {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.PostBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.PostTitle {
+  font: var(--font-heading-sm);
+
+  @media screen and (width > 768px) {
+    font: var(--font-heading-md);
+  }
+}
+
+.PostText {
+  color: var(--color-text-neutral);
+  /* font: var(--font-body-sm); */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Otclick                                  */
+/* -------------------------------------------------------------------------- */
+
+.OtclickContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.OtclickTitle {
+  font: var(--font-heading-sm);
+}
+
+.OtclickBody {
+}
+
+.OtlicksList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

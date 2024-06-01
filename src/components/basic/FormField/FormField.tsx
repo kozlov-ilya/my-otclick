@@ -10,15 +10,16 @@ interface FormFieldProps extends BaseLabelProps {
   label?: string;
   status?: "error" | "success";
   message?: string;
-  children?: React.ReactNode;
+  isFullWidth?: boolean;
 }
 
 export const FormField = forwardRef<Ref, FormFieldProps>((props, ref) => {
-  const { label, status, message, children, ...rest } = props;
+  const { label, status, message, isFullWidth, children, ...rest } = props;
 
   let classname = [
     styles["FormField"],
     status ? styles[`FormField_status_${status}`] : "",
+    isFullWidth ? styles[`FormField_width_full`] : "",
   ]
     .filter((cls) => cls.length)
     .join(" ");

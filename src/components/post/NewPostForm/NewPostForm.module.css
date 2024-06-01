@@ -1,0 +1,21 @@
+.NewPostForm {
+}
+
+.Title {
+  font: var(--font-heading-md);
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  margin-top: 32px;
+}
+
+.Controls {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 16px;
+}

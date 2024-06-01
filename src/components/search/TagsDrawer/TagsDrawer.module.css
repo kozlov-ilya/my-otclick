@@ -1,0 +1,35 @@
+.TagsDrawer {
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+
+  width: 100%;
+  min-height: 70%;
+  max-height: 95%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  outline: none;
+
+  background: var(--color-background-normal);
+}
+
+.Title {
+  display: none;
+}
+
+.Overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  z-index: 50;
+}

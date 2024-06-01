@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  width: var(--formfield-width, fit-content);
 }
 
 /* --------------------------------- status --------------------------------- */
@@ -14,6 +16,11 @@
 
 .FormField_status_success {
   --formfield-message-color: var(--color-status-positive);
+}
+
+/* ---------------------------------- width --------------------------------- */
+.FormField_width_full {
+  --formfield-width: 100%;
 }
 
 /* -------------------------------------------------------------------------- */

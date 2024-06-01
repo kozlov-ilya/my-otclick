@@ -1,0 +1,30 @@
+.SidebarMenuItem {
+}
+
+.SidebarMenuItem_selected {
+  --menuitem-background: var(--color-fill-strong);
+  --menuitem-background-hover: var(--color-fill-strong);
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 16px;
+  border-radius: 8px;
+
+  font: var(--font-body-md);
+  text-decoration: none;
+
+  background: var(--menuitem-background, transparent);
+
+  &:hover {
+    background: var(--menuitem-background-hover, var(--color-fill-alternative));
+  }
+}
+
+.Icon {
+  font-size: 20px;
+  color: var(--color-text-normal);
+}

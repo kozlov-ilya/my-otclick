@@ -2,7 +2,7 @@
 /*                                    LInk                                    */
 /* -------------------------------------------------------------------------- */
 .Link {
-  font: var(--link-font);
+  font: inherit;
   color: var(--link-color);
   text-decoration: none;
 
@@ -13,11 +13,9 @@
 
 /* ---------------------------------- role ---------------------------------- */
 .Link_role_primary {
-  --link-font: var(--font-label-lg);
   --link-color: var(--color-primary-normal);
 }
 
 .Link_role_secondary {
-  --link-font: var(--font-body-sm);
   --link-color: var(--color-text-normal);
 }

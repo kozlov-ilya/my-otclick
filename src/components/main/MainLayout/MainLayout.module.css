@@ -1,0 +1,26 @@
+.MainLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  max-width: var(--wrapper-width-lg);
+  height: 100%;
+  margin-inline: auto;
+
+  @media screen and (width > 768px) {
+    grid-template-columns: 1fr 256px;
+
+    padding-inline: 1rem;
+  }
+}
+
+.Main {
+}
+
+.RightSidebar {
+  display: none;
+
+  @media screen and (width > 768px) {
+    display: block;
+  }
+}

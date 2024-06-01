@@ -1,0 +1,78 @@
+.Checkbox {
+  --checkbox-bg-color: transparent;
+  --checkbox-border-color: var(--color-line-normal);
+  --checkbox-opacity: 1;
+  --checkbox-border-radius: 3px;
+  --checkbox-interaction-opacity: 0;
+}
+
+.Checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1.5px solid var(--checkbox-border-color);
+  border-radius: var(--checkbox-border-radius);
+  outline: none;
+  background: var(--checkbox-bg-color);
+
+  cursor: pointer;
+  opacity: var(--checkbox-opacity);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: var(--color-text-normal);
+
+    opacity: var(--checkbox-interaction-opacity);
+  }
+
+  /* States */
+  /* &:hover::before {
+    --checkbox-interaction-opacity: 0.05;
+  }
+
+  &:focus::before {
+    --checkbox-interaction-opacity: 0.08;
+  }
+
+  &:active:before {
+    --checkbox-interaction-opacity: 0.12;
+  } */
+
+  &[data-state="checked"] {
+    --checkbox-border-color: var(--color-primary-normal);
+    --checkbox-bg-color: var(--color-primary-normal);
+  }
+
+  &:disabled {
+    --checkbox-opacity: 0.43;
+    cursor: default;
+
+    &::before {
+      --checkbox-interaction-opacity: 0;
+    }
+  }
+}
+
+.Checkbox_shape_square {
+  --checkbox-border-radius: 3px;
+}
+
+.Checkbox_shape_circle {
+  --checkbox-border-radius: 50%;
+}
+
+.CheckboxIndicator {
+  color: var(--color-white);
+}

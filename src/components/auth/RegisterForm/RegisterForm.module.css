@@ -1,0 +1,34 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Header {
+}
+
+.Title {
+  font: var(--font-heading-sm);
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.RegisterBox {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font: var(--font-body-sm);
+}
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Footer {
+}

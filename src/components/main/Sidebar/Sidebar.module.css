@@ -1,0 +1,29 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+  width: 256px;
+  height: 100%;
+  top: 56px;
+  max-height: calc(100svh - 56px);
+  border-right: 1.5px solid var(--color-line-normal);
+  background: var(--color-background-normal);
+
+  position: sticky;
+  /* 
+  @media screen and (width > 768px) {
+  } */
+}
+
+.Header {
+}
+
+.Menu {
+  flex-grow: 1;
+
+  list-style: none;
+}
+
+.Controls {
+}

@@ -29,6 +29,7 @@
 .TextField_variant_fill {
   --textfield-border: none;
   --textfield-background: var(--color-fill-normal);
+  --textfield-border-color: var(--color-text-normal);
 
   &:focus-within {
     --textfield-background: var(--color-fill-strong);
@@ -97,7 +98,7 @@
   color: inherit;
 
   &::placeholder {
-    color: var(--color-text-assistive);
+    color: var(--color-text-alternative);
   }
 }
 
@@ -116,6 +117,9 @@
   transition: border var(--textfield-transition);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                 ContentLeft                                */
+/* -------------------------------------------------------------------------- */
 .ContentLeft {
   color: var(--textfield-border-color, var(--color-text-assistive));
   font-size: 20px;

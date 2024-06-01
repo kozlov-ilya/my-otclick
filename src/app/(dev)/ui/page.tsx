@@ -6,6 +6,8 @@ import { Button } from "@/components/basic/Button/Button";
 import { TextField } from "@/components/basic/TextField/TextField";
 import { FormField } from "@/components/basic/FormField/FormField";
 import { Link } from "@/components/basic/Link/Link";
+import { Chip } from "@/components/basic/Chip/Chip";
+import { MultipleSelect } from "@/components/basic/MultipleSelect/MultipleSelect";
 
 import styles from "./page.module.css";
 
@@ -72,6 +74,9 @@ const UiPage = (props: UiPageProps) => {
           <Link href={"/"} role="secondary">
             Link
           </Link>
+        </UiGroup>
+        <UiGroup label="MultipleSelect">
+          <MultipleSelect />
         </UiGroup>
       </div>
     </div>

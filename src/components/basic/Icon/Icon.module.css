@@ -1,0 +1,55 @@
+.Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--icon-width);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--icon-background);
+
+  font-size: var(--icon-font-size);
+
+  cursor: pointer;
+
+  transition: background 80ms linear;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --------------------------------- variant -------------------------------- */
+.Icon_variant_fill {
+  --icon-background: var(--color-primary-normal);
+
+  color: var(--color-white);
+}
+
+.Icon_variant_ghost {
+  --icon-background: transparent;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --icon-background: var(--color-fill-normal);
+    }
+  }
+}
+
+/* ---------------------------------- size ---------------------------------- */
+.Icon_size_sm {
+  --icon-width: 32px;
+  --icon-font-size: 20px;
+}
+
+.Icon_size_md {
+  --icon-width: 40px;
+  --icon-font-size: 24px;
+}
+
+/* --------------------------------- context -------------------------------- */
+.Icon_context_sucess {
+  color: var(--color-status-positive);
+}
+
+.Icon_context_danger {
+  color: var(--color-status-destructive);
+}

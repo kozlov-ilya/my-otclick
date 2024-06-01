@@ -1,0 +1,121 @@
+/* -------------------------------------------------------------------------- */
+/*                                DropdownMenu                                */
+/* -------------------------------------------------------------------------- */
+.DropdownMenu {
+  display: flex;
+}
+
+/* --------------------------------- static --------------------------------- */
+.DropdownMenu_static {
+  flex-direction: column;
+
+  .DropdownMenuTrigger {
+    display: none;
+  }
+
+  & [data-radix-popper-content-wrapper] {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .DropdownMenuContent,
+  .DropdownMenuSubContent {
+    position: static;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             DropdownMenuTrigger                            */
+/* -------------------------------------------------------------------------- */
+.DropdownMenuTrigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+
+  &:disabled {
+    opacity: 0.43;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             DropdownMenuContent                            */
+/* -------------------------------------------------------------------------- */
+.DropdownMenuContent,
+.DropdownMenuSubContent {
+  z-index: 1;
+
+  padding: 4px;
+  min-width: var(--radix-dropdown-menu-trigger-width);
+  border: 1.5px solid var(--color-line-normal);
+  border-radius: 8px;
+  background: var(--color-background-normal);
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              DropdownMenuItem                              */
+/* -------------------------------------------------------------------------- */
+.DropdownMenuItem,
+.DropdownMenuSubTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: relative;
+
+  cursor: pointer;
+  user-select: none;
+
+  /* transition: background 80ms linear; */
+
+  &[data-highlighted] {
+    outline: none;
+    background: var(--color-fill-normal);
+  }
+
+  &[data-disabled] {
+    color: var(--color-text-disable);
+    pointer-events: none;
+  }
+}
+
+/* ---------------------------------- Icon ---------------------------------- */
+.DropdownMenuItem_Icon {
+  font-size: 20px;
+}
+
+/* ------------------------------- LeftContent ------------------------------ */
+.DropdownMenuItem_LeftContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              DropdownMenuLabel                             */
+/* -------------------------------------------------------------------------- */
+.DropdownMenuLabel {
+  padding: 4px 8px;
+  color: var(--color-text-alternative);
+  font: var(--font-label-sm);
+
+  user-select: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            DropdownMenuSeparator                           */
+/* -------------------------------------------------------------------------- */
+.DropdownMenuSeparator {
+  height: 1px;
+  margin-block: 8px;
+  padding: 0;
+  background: var(--color-text-assistive);
+}

@@ -15,6 +15,7 @@ interface ButtonProps extends BaseButtonProps {
   status?: "error" | "success";
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
+  fullWidth?: boolean;
   className?: string;
   href?: string;
   children?: React.ReactNode;
@@ -28,6 +29,7 @@ export const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
     isRounded = false,
     leftIcon,
     rightIcon,
+    fullWidth,
     className = "",
     href,
     children,
@@ -40,13 +42,18 @@ export const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
     styles[`Button_role_${role}`],
     styles[`Button_size_${size}`],
     isRounded ? styles[`Button_rounded`] : "",
+    fullWidth ? styles[`Button_width_full`] : "",
     className,
   ]
-    .join(" ")
-    .trim();
+    .filter((cls) => cls.length)
+    .join(" ");
 
   return href ? (
-    <Link href={href}>{children}</Link>
+    <Link className={classname} href={href}>
+      {leftIcon && <span className={styles["Icon"]}>{leftIcon}</span>}
+      {children}
+      {rightIcon && <span className={styles["Icon"]}>{rightIcon}</span>}
+    </Link>
   ) : (
     <button {...rest} ref={ref} className={classname}>
       {leftIcon && <span className={styles["Icon"]}>{leftIcon}</span>}

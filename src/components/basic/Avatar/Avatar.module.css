@@ -1,0 +1,27 @@
+.Avatar {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------------------------------- size ---------------------------------- */
+.Avatar_size_sm {
+  --avatar-width: 24px;
+}
+
+.Avatar_size_md {
+  --avatar-width: 40px;
+}
+
+.AvatarImage {
+  width: var(--avatar-width);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.AvatarFallback {
+  display: inline-block;
+  width: var(--avatar-width);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: var(--color-fill-strong);
+}

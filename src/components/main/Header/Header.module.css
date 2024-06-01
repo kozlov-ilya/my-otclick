@@ -1,0 +1,38 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 56px;
+  width: 100%;
+  padding-inline: 16px;
+  border-bottom: 1.5px solid var(--color-line-normal);
+  background: var(--color-background-normal);
+
+  @media screen and (width > 768) {
+    justify-content: center;
+  }
+}
+
+.SarchContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.PageLabel {
+  font: var(--font-heading-md);
+  flex-grow: 1;
+}
+
+.Burger {
+  z-index: 10;
+}
+
+.MobileSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+}

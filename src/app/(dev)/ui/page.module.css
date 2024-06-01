@@ -1,4 +1,5 @@
 .Wrapper {
+  min-height: 200svh;
   max-width: var(--wrapper-width-md);
   padding-inline: 1rem;
   margin-inline: auto;

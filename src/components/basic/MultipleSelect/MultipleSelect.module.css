@@ -1,0 +1,33 @@
+.MultipleSelect {
+  &:has([data-state="open"]) {
+    --trigger-background: var(--color-fill-strong);
+  }
+
+  &:focus-within {
+    --trigger-background: var(--color-fill-strong);
+  }
+}
+
+.Trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 256px;
+  height: 40px;
+  padding-inline: 16px;
+  border-radius: 8px;
+  background: var(--trigger-background, var(--color-fill-normal));
+
+  transition: background 80ms linear;
+
+  &:hover {
+    --trigger-background: var(--color-fill-strong);
+  }
+}
+
+.TriggerText {
+  flex-grow: 1;
+  text-align: flex-start;
+}

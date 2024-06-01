@@ -1,0 +1,24 @@
+.SidebarMobile {
+}
+
+.Sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+
+  height: 100%;
+}
+
+.Burger {
+  position: relative;
+  z-index: 5;
+}
+
+.Overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  background: rgba(0, 0, 0, 0.4);
+}

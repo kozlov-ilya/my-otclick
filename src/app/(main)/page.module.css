@@ -1,0 +1,23 @@
+.Container {
+  display: grid;
+  grid-template-columns: 1fr 256px;
+  gap: 32px;
+
+  max-width: var(--wrapper-width-lg);
+  height: 100%;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+.Main {
+}
+
+.RightSidebar {
+  max-width: 256px;
+}
+
+.PostsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

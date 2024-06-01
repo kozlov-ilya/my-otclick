@@ -1,0 +1,30 @@
+.Filters {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.Title {
+  font: var(--font-heading-sm);
+}
+
+.TagsFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.SelectedTags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+
+.SelectedTags_Message {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  color: var(--color-text-neutral);
+}

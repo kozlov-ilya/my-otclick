@@ -1,0 +1,23 @@
+.OtclicksFeed {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 40px;
+}
+
+.Title {
+  font: var(--font-heading-md);
+}
+
+.OtclicksList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -1,0 +1,41 @@
+.MainContainer {
+  display: flex;
+  height: 100svh;
+}
+
+.Content {
+  flex-grow: 1;
+}
+
+.Sidebar {
+  flex-grow: 0;
+
+  background: var(--color-accent-violet);
+
+  @media screen and (width > 1024px) {
+    width: 400px;
+  }
+}
+
+.AuthContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  padding: 0 16px;
+
+  @media screen and (width > 1024px) {
+    justify-content: flex-start;
+  }
+}
+
+.AuthContent {
+  height: fit-content;
+  width: 100%;
+  max-width: 400px;
+
+  @media screen and (width > 1024px) {
+    margin-left: 134px;
+  }
+}

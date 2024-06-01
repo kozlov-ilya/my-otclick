@@ -1,0 +1,75 @@
+.SidebarSubMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.SidebarSubMenu_open {
+  --menu-height: 1fr;
+}
+
+.Trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 16px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: transparent;
+
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-fill-alternative);
+  }
+}
+
+.MenuContainer {
+  display: grid;
+  grid-template-rows: var(--menu-height, 0fr);
+
+  transition: grid-template-rows 150ms ease-in-out;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  position: relative;
+
+  padding: 0;
+  padding-left: 32px;
+  margin: 0;
+
+  list-style: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 26px;
+    top: 4px;
+
+    height: calc(100% - 8px);
+    width: 1.5px;
+    border-radius: 100px;
+    background: var(--color-line-alternative);
+  }
+}
+
+.Icon {
+  font-size: 20px;
+  color: var(--color-text-normal);
+}
+
+.Label {
+  flex-grow: 1;
+
+  text-align: start;
+}
+
+.Indicator {
+  font-size: 12px;
+}

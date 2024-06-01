@@ -25,6 +25,7 @@ export const TextField = forwardRef<Ref, TextFieldProps>((props, ref) => {
     isRounded,
     fieldSize = "md",
     contentLeft,
+    maxLength,
     ...rest
   } = props;
 
@@ -45,7 +46,12 @@ export const TextField = forwardRef<Ref, TextFieldProps>((props, ref) => {
         {contentLeft && (
           <span className={styles["ContentLeft"]}>{contentLeft}</span>
         )}
-        <input {...rest} ref={ref} className={styles["Control"]} />
+        <input
+          {...rest}
+          ref={ref}
+          className={styles["Control"]}
+          maxLength={maxLength}
+        />
         <span className={styles["Box"]}></span>
       </label>
     </div>

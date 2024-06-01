@@ -5,7 +5,7 @@
   --font-label-sm: 500 0.75rem/1.33 var(--font-family-open-sans);
   --font-label-md: 500 0.875rem/1.43 var(--font-family-open-sans);
   --font-label-lg: 500 1rem/1.25 var(--font-family-open-sans);
-  --font-heading-sm: 600 1.5rem/1.33 var(--font-family-open-sans);
+  --font-heading-sm: 600 1.25rem/1.33 var(--font-family-open-sans);
   --font-heading-md: 600 1.75rem/1.29 var(--font-family-open-sans);
   --font-heading-lg: 600 2rem/1.25 var(--font-family-open-sans);
   --font-display-sm: 700 2.25rem/1.22 var(--font-family-open-sans);
@@ -24,7 +24,7 @@
 
 /* --------------------------------- colors --------------------------------- */
 :root,
-:root.dark {
+:root[data-theme="dark"] {
   /* General */
   --color-white: #fff;
   --color-black: #000;
@@ -71,7 +71,7 @@
   --color-accent-pink: rgba(250, 115, 227, 1);
 }
 
-:root.light {
+:root[data-theme="light"] {
   /* Primary */
   --color-primary-light: #3385ff;
   --color-primary-normal: #0066ff;
