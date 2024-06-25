@@ -1,14 +1,19 @@
 import { MainLayout } from "@/components/main/MainLayout/MainLayout";
-
-import styles from "./pages.module.css";
 import { ScrollUp } from "@/components/tools";
+import { auth } from "@/auth";
+
+import styles from "./page.module.css";
 
 interface Props {}
 
-const SettingsPage = (props: Props) => {
+const SettingsPage = async (props: Props) => {
+  const session = await auth();
+
   return (
     <>
-      <MainLayout>SettingsPage</MainLayout>
+      <MainLayout>
+        <div>{JSON.stringify(session)}</div>
+      </MainLayout>
       <ScrollUp />
     </>
   );

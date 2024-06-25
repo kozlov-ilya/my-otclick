@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { useMatchMedia } from "@/hooks/useMatchMedia";
+import { useMatchMedia, useCurrentUser } from "@/hooks";
 
 import { SearchBar } from "@/components/search";
 
@@ -15,6 +15,8 @@ interface HeaderProps {}
 export const Header = (props: HeaderProps) => {
   const { isDesktop, isMobile } = useMatchMedia();
 
+  const user = useCurrentUser();
+
   let classname = [styles["Header"]].filter((cls) => cls.length).join(" ");
 
   return (
@@ -26,7 +28,14 @@ export const Header = (props: HeaderProps) => {
           <div className={styles["SarchContainer"]}>
             <SearchBar />
           </div>
-          <UserDropdown />
+
+          {user && (
+            <UserDropdown
+              name={user.name}
+              email={user.email}
+              avatarSrc={user?.image}
+            />
+          )}
         </>
       ) : (
         <UserDrawer />

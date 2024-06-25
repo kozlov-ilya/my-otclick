@@ -9,15 +9,6 @@
   width: var(--formfield-width, fit-content);
 }
 
-/* --------------------------------- status --------------------------------- */
-.FormField_status_error {
-  --formfield-message-color: var(--color-status-destructive);
-}
-
-.FormField_status_success {
-  --formfield-message-color: var(--color-status-positive);
-}
-
 /* ---------------------------------- width --------------------------------- */
 .FormField_width_full {
   --formfield-width: 100%;
@@ -42,7 +33,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Message                                  */
 /* -------------------------------------------------------------------------- */
-.Message {
+.ErrorMessage {
   font: var(--font-label-sm);
-  color: var(--formfield-message-color);
+  color: var(--color-status-destructive);
 }

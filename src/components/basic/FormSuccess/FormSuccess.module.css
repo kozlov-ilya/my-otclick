@@ -1,0 +1,12 @@
+.FormSuccess {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  padding: 12px;
+  border: 1.5px solid var(--color-status-positive);
+  border-radius: 12px;
+
+  font-size: var(--font-body-sm);
+  color: var(--color-status-positive);
+}

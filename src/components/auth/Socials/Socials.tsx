@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 
 import { Button } from "@/components/basic/Button/Button";
 import googleLogo from "@/../public/img/icons/google-logo.svg";
 import yandexLogo from "@/../public/img/icons/yandex-logo.svg";
+import { signIn } from "next-auth/react";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
 import styles from "./Socials.module.css";
 
@@ -28,10 +32,13 @@ export const Socials = (props: SocialsProps) => {
               alt="Google icon by Icons8"
             />
           }
+          onClick={() => {
+            signIn("google", { callbackUrl: DEFAULT_LOGIN_REDIRECT });
+          }}
         >
           Continue with Google
         </Button>
-        <Button
+        {/* <Button
           variant="outline"
           size="lg"
           isRounded={true}
@@ -46,7 +53,7 @@ export const Socials = (props: SocialsProps) => {
           }
         >
           Continue with Yandex
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

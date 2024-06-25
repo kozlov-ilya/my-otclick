@@ -11,7 +11,7 @@ type Ref = HTMLInputElement;
 interface TextFieldProps extends BaseInputProps {
   variant?: "outline" | "fill";
   contentLeft?: React.ReactElement;
-  status?: "error" | "success";
+  error?: boolean;
   fieldSize?: "sm" | "md" | "lg";
   isRounded?: boolean;
   className?: string;
@@ -21,7 +21,7 @@ export const TextField = forwardRef<Ref, TextFieldProps>((props, ref) => {
   const {
     variant = "outline",
     className = "",
-    status,
+    error,
     isRounded,
     fieldSize = "md",
     contentLeft,
@@ -33,7 +33,7 @@ export const TextField = forwardRef<Ref, TextFieldProps>((props, ref) => {
     styles["TextField"],
     styles[`TextField_variant_${variant}`],
     styles[`TextField_size_${fieldSize}`],
-    status ? styles[`TextField_status_${status}`] : "",
+    error ? styles[`TextField_status_error`] : "",
     isRounded ? styles[`TextField_rounded`] : "",
     className,
   ]

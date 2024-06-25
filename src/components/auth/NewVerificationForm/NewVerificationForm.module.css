@@ -1,0 +1,17 @@
+.NewVerificationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.Title {
+  text-align: center;
+  font: var(--font-heading-sm);
+}

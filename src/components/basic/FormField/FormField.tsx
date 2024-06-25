@@ -8,17 +8,15 @@ type Ref = HTMLLabelElement;
 
 interface FormFieldProps extends BaseLabelProps {
   label?: string;
-  status?: "error" | "success";
-  message?: string;
+  errorMessage?: string;
   isFullWidth?: boolean;
 }
 
 export const FormField = forwardRef<Ref, FormFieldProps>((props, ref) => {
-  const { label, status, message, isFullWidth, children, ...rest } = props;
+  const { label, errorMessage, isFullWidth, children, ...rest } = props;
 
   let classname = [
     styles["FormField"],
-    status ? styles[`FormField_status_${status}`] : "",
     isFullWidth ? styles[`FormField_width_full`] : "",
   ]
     .filter((cls) => cls.length)
@@ -29,7 +27,9 @@ export const FormField = forwardRef<Ref, FormFieldProps>((props, ref) => {
       {label && <span className={styles["Label"]}>{label}</span>}
       <span className={styles["Control"]}>
         {children}
-        {message && <span className={styles["Message"]}>{message}</span>}
+        {errorMessage && (
+          <span className={styles["ErrorMessage"]}>{errorMessage}</span>
+        )}
       </span>
     </label>
   );

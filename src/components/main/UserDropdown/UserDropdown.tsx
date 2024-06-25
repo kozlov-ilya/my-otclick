@@ -6,24 +6,30 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { User } from "@/components/main/User/User";
+import { useSidebarMobileContext } from "@/contexts";
+import { signOut } from "next-auth/react";
+
+import { User } from "@/components/main";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "@/components/basic/DropdownMenu/DropdownMenu";
-import { Switch } from "@/components/basic/Switch/Switch";
-import { Avatar } from "@/components/basic/Avatar/Avatar";
-import { useSidebarMobileContext } from "@/contexts";
+  Switch,
+  Avatar,
+} from "@/components/basic";
 
 import styles from "./UserDropdown.module.css";
 
-interface UserDropdownProps {}
+interface UserDropdownProps {
+  name: string;
+  email: string;
+  avatarSrc?: string;
+}
 
 export const UserDropdown = (props: UserDropdownProps) => {
-  const { ...rest } = props;
+  const { name, email, avatarSrc } = props;
 
   const { setSidebarVisibility } = useSidebarMobileContext();
 
@@ -49,7 +55,7 @@ export const UserDropdown = (props: UserDropdownProps) => {
         onOpenChange={() => setSidebarVisibility(false)}
       >
         <DropdownMenuTrigger>
-          <Avatar src="/img/iroh.jpg" />
+          <Avatar src={avatarSrc} />
         </DropdownMenuTrigger>
         <DropdownMenuContent sideOffset={8} align="end">
           <DropdownMenuItem
@@ -57,11 +63,7 @@ export const UserDropdown = (props: UserDropdownProps) => {
               router.push("/settings");
             }}
           >
-            <User
-              imgSrc="/img/iroh.jpg"
-              name="Ilya Kozlov"
-              email="kozlov.ilya.me@gmail.com"
-            />
+            <User imgSrc={avatarSrc} name={name} email={email} />
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           {mounted && (
@@ -78,7 +80,14 @@ export const UserDropdown = (props: UserDropdownProps) => {
               {`Dark mode`}
             </DropdownMenuItem>
           )}
-          <DropdownMenuItem icon={<FiLogOut />}>Log out</DropdownMenuItem>
+          <DropdownMenuItem
+            icon={<FiLogOut />}
+            onSelect={async (e) => {
+              await signOut();
+            }}
+          >
+            Log out
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
