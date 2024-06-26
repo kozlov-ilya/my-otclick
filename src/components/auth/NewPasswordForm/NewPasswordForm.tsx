@@ -2,21 +2,20 @@
 
 import styles from "./NewPasswordForm.module.css";
 
-import {
-  Button,
-  FormError,
-  FormField,
-  FormSuccess,
-  Link,
-  TextField,
-} from "@/components/basic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewPasswordSchema } from "@/lib/zod";
 import * as z from "zod";
 import { useState } from "react";
-import { setNewPassword } from "@/actions/setNewPassword";
+import { setNewPassword } from "@/actions/auth/setNewPassword";
 import { useSearchParams } from "next/navigation";
+
+import { FormField } from "@/components/basic/FormField/FormField";
+import { TextField } from "@/components/basic/TextField/TextField";
+import { FormError } from "@/components/basic/FormError/FormError";
+import { FormSuccess } from "@/components/basic/FormSuccess/FormSuccess";
+import { Button } from "@/components/basic/Button/Button";
+import { Link } from "@/components/basic/Link/Link";
 
 interface NewPasswordFormProps {}
 

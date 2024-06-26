@@ -9,16 +9,16 @@ import { useRouter } from "next/navigation";
 import { useSidebarMobileContext } from "@/contexts";
 import { signOut } from "next-auth/react";
 
-import { User } from "@/components/main";
+import { User } from "@/components/main/User/User";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-  Switch,
-  Avatar,
-} from "@/components/basic";
+} from "@/components/basic/DropdownMenu/DropdownMenu";
+import { Switch } from "@/components/basic/Switch/Switch";
+import { Avatar } from "@/components/basic/Avatar/Avatar";
 
 import styles from "./UserDropdown.module.css";
 

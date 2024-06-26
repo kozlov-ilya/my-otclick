@@ -1,6 +1,7 @@
 .Sidebar {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 
   padding: 16px;
   width: 256px;
@@ -11,19 +12,10 @@
   background: var(--color-background-normal);
 
   position: sticky;
-  /* 
-  @media screen and (width > 768px) {
-  } */
-}
-
-.Header {
 }
 
 .Menu {
-  flex-grow: 1;
+  /* flex-grow: 1; */
 
   list-style: none;
-}
-
-.Controls {
 }

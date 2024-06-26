@@ -1,0 +1,17 @@
+.Banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--color-fill-alternative);
+
+  font: var(--font-label-md);
+  text-decoration: none;
+
+  &[href]:hover {
+    background: var(--color-fill-normal);
+  }
+}

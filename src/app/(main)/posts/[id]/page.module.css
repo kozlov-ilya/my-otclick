@@ -29,7 +29,7 @@
 .PostTitle {
   font: var(--font-heading-sm);
 
-  @media screen and (width > 768px) {
+  @media screen and (width > 767px) {
     font: var(--font-heading-md);
   }
 }

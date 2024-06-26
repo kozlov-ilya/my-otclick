@@ -1,21 +1,20 @@
 "use client";
 
-import {
-  Button,
-  FormError,
-  FormField,
-  FormSuccess,
-  Link,
-  TextField,
-} from "@/components/basic";
+import styles from "./PasswordResetForm.module.css";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ResetSchema } from "@/lib/zod";
 import * as z from "zod";
 import { useState } from "react";
-import { reset } from "@/actions/reset";
+import { reset } from "@/actions/auth/reset";
 
-import styles from "./PasswordResetForm.module.css";
+import { FormField } from "@/components/basic/FormField/FormField";
+import { TextField } from "@/components/basic/TextField/TextField";
+import { FormError } from "@/components/basic/FormError/FormError";
+import { FormSuccess } from "@/components/basic/FormSuccess/FormSuccess";
+import { Button } from "@/components/basic/Button/Button";
+import { Link } from "@/components/basic/Link/Link";
 
 interface PasswordResetFormProps {}
 

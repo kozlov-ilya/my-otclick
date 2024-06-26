@@ -1,10 +1,13 @@
+"use client";
+
 import { Drawer } from "vaul";
 import { AiOutlineTags } from "react-icons/ai";
 
-import { Button, Icon } from "@/components/basic";
+import { Button } from "@/components/basic/Button/Button";
+import { Icon } from "@/components/basic/Icon/Icon";
 
 import styles from "./TagsDrawer.module.css";
-import { TagsFilter } from "../TagsFilter/TagsFilter";
+import { TagsFilter } from "../../tags/TagsFilter/TagsFilter";
 
 interface TagsDrawerProps {}
 

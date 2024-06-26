@@ -1,23 +1,21 @@
-"use client";
-
 import { Tag } from "@/components/basic/Tag/Tag";
-import { PostType } from "@/data/posts";
+import type { Tag as TagType } from "@prisma/client";
 
 import styles from "./PostTags.module.css";
 
 interface PostTagsProps {
-  post?: PostType;
+  tags?: TagType[];
 }
 
 export const PostTags = (props: PostTagsProps) => {
-  const { post, ...rest } = props;
+  const { tags } = props;
 
   let classname = [styles["PostTags"]].filter((cls) => cls.length).join(" ");
 
   return (
     <div className={classname}>
-      {post?.tags.map((tag) => (
-        <Tag key={tag.value} label={tag.label} />
+      {tags?.map((tag) => (
+        <Tag label={tag.name} key={tag.id} />
       ))}
     </div>
   );

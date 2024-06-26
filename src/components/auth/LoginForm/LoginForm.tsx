@@ -5,17 +5,16 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginSchema } from "@/lib/zod";
-import { login } from "@/actions/login";
+import { login } from "@/actions/auth/login";
 
-import {
-  FormField,
-  TextField,
-  Button,
-  Link,
-  FormError,
-  FormSuccess,
-} from "@/components/basic";
-import { Socials } from "@/components/auth";
+import { FormField } from "@/components/basic/FormField/FormField";
+import { Socials } from "@/components/auth/Socials/Socials";
+import { TextField } from "@/components/basic/TextField/TextField";
+import { FormError } from "@/components/basic/FormError/FormError";
+import { FormSuccess } from "@/components/basic/FormSuccess/FormSuccess";
+import { Button } from "@/components/basic/Button/Button";
+import { Link } from "@/components/basic/Link/Link";
+
 import { useSearchParams } from "next/navigation";
 
 import styles from "./LoginForm.module.css";

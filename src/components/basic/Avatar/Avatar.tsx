@@ -1,9 +1,10 @@
 "use client";
 
+import styles from "./Avatar.module.css";
+
+import { FaRegUser } from "react-icons/fa";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import { AvatarImageProps as AvatarImagePrimitiveProps } from "@radix-ui/react-avatar";
-
-import styles from "./Avatar.module.css";
 import { forwardRef } from "react";
 
 type Ref = HTMLSpanElement;
@@ -25,9 +26,9 @@ export const Avatar = forwardRef<Ref, AvatarProps>((props, ref) => {
         {...rest}
         className={styles["AvatarImage"]}
       />
-      <AvatarPrimitive.Fallback
-        className={styles["AvatarFallback"]}
-      ></AvatarPrimitive.Fallback>
+      <AvatarPrimitive.Fallback {...rest} className={styles["AvatarFallback"]}>
+        <FaRegUser className={styles["UserIcon"]} />
+      </AvatarPrimitive.Fallback>
     </AvatarPrimitive.Root>
   );
 });

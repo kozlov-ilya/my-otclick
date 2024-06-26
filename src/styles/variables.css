@@ -60,6 +60,9 @@
   --color-fill-normal: rgba(112, 115, 124, 0.2199999988079071);
   --color-fill-strong: rgba(112, 115, 124, 0.2800000011920929);
   --color-fill-alternative: rgba(112, 115, 124, 0.11999999731779099);
+  --color-fill-solid-normal: #2e2f32;
+  --color-fill-solid-strong: #323439;
+  --color-fill-solid-alternative: #262729;
 
   /* Accent */
   --color-accent-red-orange: rgba(255, 123, 46, 1);
@@ -103,6 +106,9 @@
   --color-fill-normal: rgba(112, 115, 124, 0.07999999821186066);
   --color-fill-strong: rgba(112, 115, 124, 0.1599999964237213);
   --color-fill-alternative: rgba(112, 115, 124, 0.05000000074505806);
+  --color-fill-solid-normal: #f4f4f5;
+  --color-fill-solid-strong: #e8e8ea;
+  --color-fill-solid-alternative: #f8f8f8;
 
   /* Accent */
   --color-accent-red-orange: rgba(255, 93, 0, 1);

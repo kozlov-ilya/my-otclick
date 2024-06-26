@@ -1,15 +1,25 @@
 .OtclickCard {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+
+  position: relative;
 
   width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--color-line-normal);
+  border-radius: 8px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.OtclickCard_new {
+  background: var(--color-fill-alternative);
 }
 
 .Header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   position: relative;
 
@@ -18,33 +28,27 @@
 
 .Info {
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: var(--postheader-gap, 8px);
 }
 
-.AuthorInfo {
+.TextInfo {
   display: flex;
-  gap: 8px;
   align-items: center;
-
-  position: relative;
-  z-index: 1;
+  gap: 4px;
 }
 
-.AuthorTextInfo {
+.AuthorName {
+  font: var(--postheader-author-font, var(--font-label-sm));
+}
+
+.Date {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  gap: 4px;
 
-.AuthorUsername {
   font: var(--font-label-sm);
+  font-weight: normal;
   color: var(--color-text-neutral);
-}
-
-.Controls {
-  display: flex;
-  gap: 8px;
 }
 
 .Body {
@@ -55,9 +59,8 @@
   font: var(--font-body-sm);
 }
 
-.PostLink {
+.RelatedPostLink {
   font: var(--font-label-sm);
-
   color: var(--color-text-neutral);
 
   &:hover {

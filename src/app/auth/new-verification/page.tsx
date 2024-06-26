@@ -1,4 +1,4 @@
-import { NewVerificationForm } from "@/components/auth";
+import { NewVerificationForm } from "@/components/auth/NewVerificationForm/NewVerificationForm";
 import styles from "./page.module.css";
 
 interface Props {}

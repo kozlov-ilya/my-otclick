@@ -1,59 +1,56 @@
-"use client";
-
-import { MdEdit } from "react-icons/md";
-import { MdDeleteOutline } from "react-icons/md";
-
-import { OtclickType } from "@/data/otclick";
-import { Avatar } from "@/components/basic/Avatar/Avatar";
-import Link from "next/link";
-import { Icon } from "@/components/basic/Icon/Icon";
-
 import styles from "./OtclickCard.module.css";
 
+import { Avatar } from "@/components/basic/Avatar/Avatar";
+import { OtclickActions } from "@/components/otclick/OtclickActions/OtclickActions";
+import { getOtclickAuthor, getOtclickReceiver } from "@/data/otclick";
+import { getCurrentUser } from "@/lib/auth";
+import type { Otclick } from "@prisma/client";
+import Link from "next/link";
+
 interface OtclickCardProps {
-  otclick: OtclickType;
-  isRelatedPostShown?: boolean;
+  otclick: Otclick;
 }
 
-export const OtclickCard = (props: OtclickCardProps) => {
-  const { otclick, isRelatedPostShown } = props;
+export const OtclickCard = async (props: OtclickCardProps) => {
+  const { otclick } = props;
 
-  const isCurrentUserOtclick = true;
+  const currentUser = await getCurrentUser();
 
-  let classname = [styles["OtclickCard"]].filter((cls) => cls.length).join(" ");
+  const author = await getOtclickAuthor({ otclickId: otclick.id });
+  const receiver = await getOtclickReceiver({ otclickId: otclick.id });
+
+  const isByCurrentUser = currentUser?.id === author?.id;
+  const isForCurrentUser = currentUser?.id === receiver?.id;
+
+  const isNew = isForCurrentUser && !otclick.viewed;
+
+  let classname = [
+    styles["OtclickCard"],
+    isNew ? styles["OtclickCard_new"] : "",
+  ]
+    .filter((cls) => cls.length)
+    .join(" ");
 
   return (
     <div className={classname}>
       <div className={styles["Header"]}>
         <div className={styles["Info"]}>
-          <div className={styles["AuthorInfo"]}>
-            <Avatar size="sm" src="/img/iroh.jpg" />
-            <div className={styles["AuthorTextInfo"]}>
-              <span
-                className={styles["AuthorUsername"]}
-              >{`@${otclick.author?.username}`}</span>
+          <Avatar size="sm" src={author?.image ?? undefined} />
+          <div className={styles["TextInfo"]}>
+            <div className={styles["AuthorName"]}>{author?.username}</div>
+            <div className={styles["Date"]}>
+              <span>•</span>
+              {otclick.createdAt.toLocaleDateString("ru-Ru")}
             </div>
           </div>
-
-          {isRelatedPostShown && (
-            <Link href={"/posts/1"} className={styles["PostLink"]}>
-              Related Post
-            </Link>
-          )}
+          <Link
+            href={`/posts/${otclick.postId}`}
+            className={styles["RelatedPostLink"]}
+          >
+            Related post
+          </Link>
         </div>
-
-        <div className={styles["Controls"]}>
-          {isCurrentUserOtclick && (
-            <>
-              <Icon size="sm">
-                <MdEdit />
-              </Icon>
-              <Icon size="sm" context="danger">
-                <MdDeleteOutline />
-              </Icon>
-            </>
-          )}
-        </div>
+        {isByCurrentUser ? <OtclickActions otclickId={otclick.id} /> : null}
       </div>
       <div className={styles["Body"]}>
         <div className={styles["Message"]}>{otclick.message}</div>

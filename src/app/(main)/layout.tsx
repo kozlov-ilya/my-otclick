@@ -1,30 +1,25 @@
-import dynamic from "next/dynamic";
-
 import { Sidebar } from "@/components/main/Sidebar/Sidebar";
-import { HeaderSkeleton } from "@/components/main/HeaderSkeleton/HeaderSkeleton";
 import { Header } from "@/components/main/Header/Header";
 
-const DynamicHeader = dynamic(
-  () => import("@/components/main/Header/Header").then((mod) => mod.Header),
-  { ssr: false, loading: () => <HeaderSkeleton /> }
-);
-
 import styles from "./layout.module.css";
+import { countUserUnviewedOtclicks } from "@/actions/otclick/countUnviewedOtclicks";
 
 interface Props {
   children?: React.ReactNode;
 }
 
-const MainLayout = (props: Props) => {
+const MainLayout = async (props: Props) => {
   const { children } = props;
+
+  const unviewedOtclicksCount = await countUserUnviewedOtclicks();
 
   return (
     <div className={styles["Container"]}>
       <div className={styles["Sidebar"]}>
-        <Sidebar />
+        <Sidebar unviewedOtclicksCount={unviewedOtclicksCount ?? undefined} />
       </div>
       <div className={styles["Header"]}>
-        <DynamicHeader />
+        <Header />
       </div>
       <div className={styles["MainContent"]}>{children}</div>
     </div>

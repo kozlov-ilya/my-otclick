@@ -1,0 +1,11 @@
+.PostOtclicks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.OtclicksList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

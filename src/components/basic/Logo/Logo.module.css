@@ -1,0 +1,20 @@
+.Logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+}
+
+.LogoImg {
+  fill: var(--color-text-normal);
+}
+
+.LogoText {
+  font: var(--font-heading-sm);
+  display: none;
+
+  @media screen and (width > 767px) {
+    display: inline;
+  }
+}

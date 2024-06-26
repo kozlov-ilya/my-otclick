@@ -1,59 +1,59 @@
-"use client";
-
-import { TbDots } from "react-icons/tb";
-import { FaRegBookmark } from "react-icons/fa6";
-import { FaRegFlag } from "react-icons/fa6";
-
-import { PostType } from "@/data/posts";
-import { Avatar } from "@/components/basic/Avatar/Avatar";
-import { Icon } from "@/components/basic/Icon/Icon";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/basic/DropdownMenu/DropdownMenu";
-
 import styles from "./PostHeader.module.css";
 
+import type { Post, User } from "@prisma/client";
+import { Avatar } from "@/components/basic/Avatar/Avatar";
+import { PostActions } from "@/components/post/PostActions/PostActions";
+import { getCurrentUser } from "@/lib/auth";
+import { checkIfPostSavedByIDs } from "@/data/post";
+
 interface PostHeaderProps {
-  post?: PostType;
+  post: Post;
+  author?: User;
   isDetailed?: boolean;
 }
 
-export const PostHeader = (props: PostHeaderProps) => {
-  const { isDetailed, post, ...rest } = props;
+export const PostHeader = async (props: PostHeaderProps) => {
+  const { post, author, isDetailed = false } = props;
 
-  let classname = [styles["PostHeader"]].filter((cls) => cls.length).join(" ");
+  const currentUser = await getCurrentUser();
+
+  const isPostSavedByCurrentUser =
+    currentUser &&
+    (await checkIfPostSavedByIDs({
+      postId: post.id,
+      userId: currentUser.id,
+    }));
+
+  let classname = [
+    styles["PostHeader"],
+    isDetailed ? styles["PostHeader_detailed"] : "",
+  ]
+    .filter((cls) => cls.length)
+    .join(" ");
 
   return (
     <div className={classname}>
-      <div className={styles["AuthorInfo"]}>
-        <Avatar size={isDetailed ? "md" : "sm"} src="/img/iroh.jpg" />
-        <div className={styles["AuthorTextInfo"]}>
-          {isDetailed && (
-            <span
-              className={styles["AuthorName"]}
-            >{`${post?.author.name}`}</span>
-          )}
-          <span
-            className={styles["AuthorUsername"]}
-          >{`@${post?.author.username}`}</span>
+      <div className={styles["Info"]}>
+        <Avatar
+          size={isDetailed ? "md" : "sm"}
+          src={author?.image ?? undefined}
+        />
+        <div className={styles["TextInfo"]}>
+          <div className={styles["AuthorName"]}>
+            {author?.username ?? "Unknown"}
+          </div>
+          <div className={styles["Date"]}>
+            <span>•</span>
+            {post.createdAt.toLocaleDateString("ru-Ru")}
+          </div>
         </div>
       </div>
-      <div className={styles["Controls"]}>
-        <DropdownMenu modal={false}>
-          <DropdownMenuTrigger>
-            <Icon size="sm">
-              <TbDots />
-            </Icon>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem icon={<FaRegBookmark />}>Save</DropdownMenuItem>
-            <DropdownMenuItem icon={<FaRegFlag />}>Report</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
+      <PostActions
+        postId={post.id}
+        currentUserId={currentUser?.id}
+        isPostOfCurrentUser={currentUser?.id === post.authorId}
+        isPostSaved={isPostSavedByCurrentUser}
+      />
     </div>
   );
 };

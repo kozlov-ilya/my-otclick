@@ -1,4 +1,6 @@
+import { getCurrentUser } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { generateUsername } from "@/lib/username";
 
 export const createUser = async ({
   email,
@@ -9,7 +11,11 @@ export const createUser = async ({
   hashedPassword: string;
   name: string;
 }) => {
-  return db.user.create({ data: { email, password: hashedPassword, name } });
+  const username = await generateUsername();
+
+  return db.user.create({
+    data: { email, password: hashedPassword, name, username },
+  });
 };
 
 export const getUserByEmail = async (email: string) => {
@@ -30,4 +36,10 @@ export const getUserById = async (id?: string) => {
   } catch (error) {
     return null;
   }
+};
+
+export const getUserByUsername = async ({ username }: { username: string }) => {
+  const user = await db.user.findUnique({ where: { username } });
+
+  return user;
 };

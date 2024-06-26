@@ -2,8 +2,11 @@
 
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { verifyEmail } from "@/actions/verifyEmail";
-import { FormError, FormSuccess, Link } from "@/components/basic";
+import { verifyEmail } from "@/actions/auth/verifyEmail";
+
+import { FormError } from "@/components/basic/FormError/FormError";
+import { FormSuccess } from "@/components/basic/FormSuccess/FormSuccess";
+import { Link } from "@/components/basic/Link/Link";
 
 import styles from "./NewVerificationForm.module.css";
 
