@@ -1,0 +1,7 @@
+.Container {
+  padding: 16px;
+
+  @media screen and (width > 767px) {
+    padding: 0;
+  }
+}

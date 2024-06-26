@@ -1,9 +1,13 @@
 "use client";
 
+import styles from "./Textarea.module.css";
+
 import TextareaAutosize from "react-textarea-autosize";
 import { TextareaAutosizeProps } from "react-textarea-autosize";
 
-import styles from "./Textarea.module.css";
+import { forwardRef } from "react";
+
+type Ref = HTMLTextAreaElement;
 
 interface TextareaProps extends TextareaAutosizeProps {
   variant?: "outline" | "fill";
@@ -11,7 +15,7 @@ interface TextareaProps extends TextareaAutosizeProps {
   isFullWidth?: boolean;
 }
 
-export const Textarea = (props: TextareaProps) => {
+export const Textarea = forwardRef<Ref, TextareaProps>((props, ref) => {
   const {
     variant = "outline",
     status,
@@ -38,8 +42,9 @@ export const Textarea = (props: TextareaProps) => {
       <TextareaAutosize
         className={styles["Control"]}
         minRows={minRows}
+        ref={ref}
         {...rest}
       ></TextareaAutosize>
     </div>
   );
-};
+});

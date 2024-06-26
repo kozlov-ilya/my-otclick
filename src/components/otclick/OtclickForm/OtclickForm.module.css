@@ -4,10 +4,7 @@
   gap: 16px;
 }
 
-.Content {
-}
-
 .Controls {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }

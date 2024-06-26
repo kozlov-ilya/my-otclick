@@ -1,10 +1,13 @@
+"use client";
+
 import { Drawer } from "vaul";
 import { AiOutlineTags } from "react-icons/ai";
 
-import { Button, Icon } from "@/components/basic";
+import { Button } from "@/components/basic/Button/Button";
+import { Icon } from "@/components/basic/Icon/Icon";
 
 import styles from "./TagsDrawer.module.css";
-import { TagsFilter } from "../TagsFilter/TagsFilter";
+import { TagsFilter } from "../../tags/TagsFilter/TagsFilter";
 
 interface TagsDrawerProps {}
 
@@ -28,7 +31,7 @@ export const TagsDrawer = (props: TagsDrawerProps) => {
             aria-describedby={undefined}
           >
             <Drawer.Title className={styles["Title"]}></Drawer.Title>
-            <TagsFilter isStatic={true} />
+            <TagsFilter />
             <Button fullWidth={true} role="secondary">
               Save
             </Button>

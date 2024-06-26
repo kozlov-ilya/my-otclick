@@ -37,6 +37,7 @@
 
 /* --------------------------------- status --------------------------------- */
 .Textarea_status_error {
+  --textarea-border: 1.5px solid var(--color-status-destructive);
 }
 
 .Textarea_status_success {

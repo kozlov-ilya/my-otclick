@@ -13,6 +13,10 @@
   font: var(--textfield-font);
 
   transition: background var(--textfield-transition);
+
+  &:has(:disabled) {
+    --box-cursor: default;
+  }
 }
 
 /* --------------------------------- variant -------------------------------- */
@@ -100,6 +104,10 @@
   &::placeholder {
     color: var(--color-text-alternative);
   }
+
+  &:disabled {
+    opacity: 0.43;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -112,7 +120,7 @@
   border: var(--textfield-border);
   border-radius: var(--textfield-radius, 8px);
 
-  cursor: text;
+  cursor: var(--box-cursor, text);
 
   transition: border var(--textfield-transition);
 }

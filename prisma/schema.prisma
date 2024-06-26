@@ -8,16 +8,63 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  password      String?
-  emailVerified DateTime?
-  image         String?
+  id               String    @id @default(cuid())
+  name             String
+  email            String    @unique
+  username         String?   @unique
+  password         String?
+  emailVerified    DateTime?
+  image            String?
+  posts            Post[]    @relation("post")
+  savedPosts       Post[]    @relation("saved")
+  sentOtclicks     Otclick[] @relation("sent")
+  receivedOtclicks Otclick[] @relation("received")
+  watchedTags      Tag[]
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   Account   Account[]
+}
+
+model Post {
+  id               Int       @id @default(autoincrement())
+  title            String
+  text             String?
+  author           User      @relation("post", fields: [authorId], references: [id])
+  authorId         String
+  usersSaved       User[]    @relation("saved")
+  otclicks         Otclick[]
+  newOtclicksCount Int       @default(0)
+  tags             Tag[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  posts Post[]
+  users User[]
+}
+
+model Otclick {
+  id         Int     @id @default(autoincrement())
+  message    String
+  author     User    @relation(name: "sent", fields: [authorId], references: [id])
+  authorId   String
+  receiver   User    @relation(name: "received", fields: [receiverId], references: [id])
+  receiverId String
+  viewed     Boolean @default(false)
+  post       Post    @relation(fields: [postId], references: [id])
+  postId     Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([authorId, postId])
+  @@unique([authorId, id])
+  @@unique([receiverId, id])
 }
 
 model Account {

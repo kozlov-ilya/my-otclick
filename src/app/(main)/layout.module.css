@@ -10,7 +10,7 @@
 
   min-height: 100svh;
 
-  @media screen and (width > 1200px) {
+  @media screen and (width > 1199px) {
     grid-template-areas:
       "head head"
       "side main";
@@ -21,7 +21,7 @@
   display: none;
   grid-area: side;
 
-  @media screen and (width > 1200px) {
+  @media screen and (width > 1199px) {
     display: block;
   }
 }

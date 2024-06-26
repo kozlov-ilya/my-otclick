@@ -1,11 +1,13 @@
+"use client";
+
+import styles from "./SidebarMobile.module.css";
+
 import { MdMenu } from "react-icons/md";
 
 import { Icon } from "@/components/basic/Icon/Icon";
-import { Sidebar } from "@/components/main";
-import { ClientPortal } from "@/components/basic";
+import { Sidebar } from "@/components/main/Sidebar/Sidebar";
+import { ClientPortal } from "@/components/basic/ClientPortal/ClientPortal";
 import { useSidebarMobileContext } from "@/contexts";
-
-import styles from "./SidebarMobile.module.css";
 
 interface SidebarMobileProps {}
 

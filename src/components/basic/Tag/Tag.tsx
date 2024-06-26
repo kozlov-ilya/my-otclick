@@ -6,11 +6,6 @@ type BaseButtonProps = React.ComponentPropsWithoutRef<"button">;
 
 type Ref = HTMLButtonElement;
 
-export type TagType = {
-  label: string;
-  value: string;
-};
-
 interface TagProps extends BaseButtonProps {
   label?: string;
   leftContent?: React.ReactNode;

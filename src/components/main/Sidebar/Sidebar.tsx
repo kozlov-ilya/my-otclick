@@ -1,46 +1,65 @@
 "use client";
 
+import styles from "./Sidebar.module.css";
+
 import { RiHome6Line } from "react-icons/ri";
 import { GoStack } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaRegBookmark } from "react-icons/fa6";
 import { HiOutlineRectangleStack } from "react-icons/hi2";
 import { TbClick } from "react-icons/tb";
+import { TiArrowForwardOutline } from "react-icons/ti";
+import { FaRegUser } from "react-icons/fa";
 
 import { usePathname } from "next/navigation";
 
-import { Button } from "@/components/basic/Button/Button";
-
-import styles from "./Sidebar.module.css";
 import { SidebarMenuItem } from "../SidebarMenuItem/SidebarMenuItem";
 import { SidebarSubMenu } from "../SidebarSubMenu/SidebarSubMenu";
+import { Banner } from "@/components/basic/Banner/Banner";
 
 export const menuItems = [
   { label: "Home", icon: <RiHome6Line />, path: "/" },
   {
-    label: "Library",
-    icon: <GoStack />,
+    label: "Posts",
+    icon: <HiOutlineRectangleStack />,
     subItems: [
       {
         label: "My Posts",
-        icon: <HiOutlineRectangleStack />,
-        path: "/library/posts/my",
+        icon: <FaRegUser />,
+        path: "/posts/my",
       },
-      { label: "My Otclicks", icon: <TbClick />, path: "/library/otclicks/my" },
       {
-        label: "Saved Posts",
+        label: "Saved",
         icon: <FaRegBookmark />,
-        path: "/library/posts/saved",
+        path: "/posts/saved",
+      },
+    ],
+  },
+  {
+    label: "Otclicks",
+    icon: <TbClick />,
+    subItems: [
+      {
+        label: "Received",
+        icon: <TiArrowForwardOutline style={{ transform: "rotate(180deg)" }} />,
+        path: "/otclicks/received",
+      },
+      {
+        label: "Sent",
+        icon: <TiArrowForwardOutline />,
+        path: "/otclicks/sent",
       },
     ],
   },
   { label: "Settings", icon: <IoSettingsOutline />, path: "/settings" },
 ];
 
-interface SidebarProps {}
+interface SidebarProps {
+  unviewedOtclicksCount?: number;
+}
 
 export const Sidebar = (props: SidebarProps) => {
-  const { ...rest } = props;
+  const { unviewedOtclicksCount } = props;
 
   const pathname = usePathname();
 
@@ -48,7 +67,6 @@ export const Sidebar = (props: SidebarProps) => {
 
   return (
     <div className={classname}>
-      <div className={styles["Header"]}></div>
       <div className={styles["Menu"]}>
         {menuItems.map((item) => {
           return item.subItems ? (
@@ -70,7 +88,11 @@ export const Sidebar = (props: SidebarProps) => {
           );
         })}
       </div>
-      <div className={styles["Controls"]}></div>
+      {unviewedOtclicksCount ? (
+        <Banner href="/otclicks/received">{`You have ${unviewedOtclicksCount} new Otclick${
+          unviewedOtclicksCount !== 1 ? "s" : ""
+        }!`}</Banner>
+      ) : undefined}
     </div>
   );
 };

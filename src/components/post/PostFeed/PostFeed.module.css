@@ -12,12 +12,16 @@
   padding-inline: 16px;
 
   min-height: 40px;
+
+  @media screen and (width > 767px) {
+    padding-inline: 0px;
+  }
 }
 
 .Title {
   font: var(--font-heading-md);
 
-  @media screen and (width > 768px) {
+  @media screen and (width > 767px) {
     font: var(--font-heading-md);
   }
 }
@@ -25,5 +29,15 @@
 .PostsList {
   display: flex;
   flex-direction: column;
-  /* gap: 16px; */
+  align-items: center;
+  gap: 8px;
+}
+
+.FiltersMobile {
+  padding-inline: 16px;
+  width: 100%;
+
+  @media screen and (width > 424px) {
+    max-width: 288px;
+  }
 }

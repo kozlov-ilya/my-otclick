@@ -1,12 +1,4 @@
 .Checkbox {
-  --checkbox-bg-color: transparent;
-  --checkbox-border-color: var(--color-line-normal);
-  --checkbox-opacity: 1;
-  --checkbox-border-radius: 3px;
-  --checkbox-interaction-opacity: 0;
-}
-
-.Checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,39 +8,13 @@
   width: 18px;
   height: 18px;
   padding: 0;
-  border: 1.5px solid var(--checkbox-border-color);
+  border: 1.5px solid var(--checkbox-border-color, var(--color-line-normal));
   border-radius: var(--checkbox-border-radius);
   outline: none;
-  background: var(--checkbox-bg-color);
+  background: var(--checkbox-bg-color, transparent);
 
   cursor: pointer;
-  opacity: var(--checkbox-opacity);
-
-  &::before {
-    content: "";
-
-    position: absolute;
-
-    width: 2rem;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background: var(--color-text-normal);
-
-    opacity: var(--checkbox-interaction-opacity);
-  }
-
-  /* States */
-  /* &:hover::before {
-    --checkbox-interaction-opacity: 0.05;
-  }
-
-  &:focus::before {
-    --checkbox-interaction-opacity: 0.08;
-  }
-
-  &:active:before {
-    --checkbox-interaction-opacity: 0.12;
-  } */
+  opacity: var(--checkbox-opacity, 1);
 
   &[data-state="checked"] {
     --checkbox-border-color: var(--color-primary-normal);
@@ -58,10 +24,6 @@
   &:disabled {
     --checkbox-opacity: 0.43;
     cursor: default;
-
-    &::before {
-      --checkbox-interaction-opacity: 0;
-    }
   }
 }
 

@@ -5,32 +5,31 @@
   position: relative;
 }
 
-.AuthorInfo {
+.PostHeader_detailed {
+  --postheader-gap: 12px;
+}
+
+.Info {
   display: flex;
-  gap: 8px;
   align-items: center;
-
-  position: relative;
-  z-index: 1;
+  gap: var(--postheader-gap, 8px);
 }
 
-.AuthorTextInfo {
+.TextInfo {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.AuthorUsername {
-  font: var(--font-label-sm);
-  color: var(--color-text-neutral);
-  /* font-weight: 700; */
+  align-items: center;
+  gap: 4px;
 }
 
 .AuthorName {
-  font: var(--font-body-sm);
+  font: var(--postheader-author-font, var(--font-label-sm));
 }
 
-.Controls {
-  position: relative;
-  z-index: 1;
+.Date {
+  display: flex;
+  gap: 4px;
+
+  font: var(--font-label-sm);
+  font-weight: normal;
+  color: var(--color-text-neutral);
 }

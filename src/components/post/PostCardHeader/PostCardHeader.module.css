@@ -1,0 +1,35 @@
+.PostCardHeader {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.PostHeader_detailed {
+  --postheader-gap: 12px;
+}
+
+.Info {
+  display: flex;
+  align-items: center;
+  gap: var(--postheader-gap, 8px);
+}
+
+.TextInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.AuthorName {
+  font: var(--postheader-author-font, var(--font-label-sm));
+}
+
+.Date {
+  display: flex;
+  gap: 4px;
+
+  font: var(--font-label-sm);
+  font-weight: normal;
+  color: var(--color-text-neutral);
+}

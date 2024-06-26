@@ -1,9 +1,11 @@
+"use client";
+
 import { FiMoon } from "react-icons/fi";
 import { useTheme } from "next-themes";
 
 import { useEffect, useState } from "react";
 import styles from "./ThemeSwitch.module.css";
-import { Switch } from "@/components/basic";
+import { Switch } from "@/components/basic/Switch/Switch";
 
 interface ThemeSwitchProps {}
 

@@ -1,20 +1,24 @@
-import { MdAdd } from "react-icons/md";
+import styles from "./page.module.css";
 
 import { PostFeed } from "@/components/post/PostFeed/PostFeed";
-import { posts } from "@/data/posts";
 import { Filters } from "@/components/search/Filters/Filters";
-import { Button } from "@/components/basic/Button/Button";
 import { MainLayout } from "@/components/main/MainLayout/MainLayout";
-
-import styles from "./page.module.css";
+import { getAllTags, getCurrentUserWatchedTags } from "@/data/tag";
 
 interface HomePageProps {}
 
-const HomePage = (props: HomePageProps) => {
+const HomePage = async (props: HomePageProps) => {
+  const tags = await getAllTags();
+  const watchedTags = await getCurrentUserWatchedTags();
+
   return (
-    <MainLayout rightSidebarContent={<Filters />}>
-      <PostFeed posts={posts} title="Recent Posts" />
-    </MainLayout>
+    <PostFeed
+      title="Recent Posts"
+      tags={tags}
+      watchedTags={watchedTags}
+      showControls
+      showFilters
+    />
   );
 };
 

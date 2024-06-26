@@ -10,7 +10,6 @@
   width: 100%;
   padding: 8px 16px;
   border-radius: var(--postcard-radius);
-  margin-block: 4px;
   background: transparent;
   overflow: hidden;
 
@@ -21,6 +20,12 @@
   &:hover {
     background: var(--color-fill-alternative);
   }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .PostBody {

@@ -10,7 +10,7 @@
 .Sidebar {
   flex-grow: 0;
 
-  background: var(--color-accent-violet);
+  /* background: var(--color-accent-violet); */
 
   @media screen and (width > 1024px) {
     width: 400px;

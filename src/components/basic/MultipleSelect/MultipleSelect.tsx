@@ -87,8 +87,6 @@ const Option = (props: OptionProps) => {
 interface MultipleSelectProps extends Props {
   label?: string;
   contentLeft?: React.ReactNode;
-  usePortal?: boolean;
-  isStatic?: boolean;
 }
 
 export const MultipleSelect = (props: MultipleSelectProps) => {
@@ -96,7 +94,6 @@ export const MultipleSelect = (props: MultipleSelectProps) => {
     placeholder = "Search...",
     label = "Select",
     contentLeft,
-    isStatic,
     ...rest
   } = props;
 
@@ -106,7 +103,7 @@ export const MultipleSelect = (props: MultipleSelectProps) => {
 
   return (
     <div className={classname}>
-      <DropdownMenu modal={false} isStatic={isStatic} open={isStatic}>
+      <DropdownMenu modal={false}>
         <DropdownMenuTrigger>
           <div className={styles["Trigger"]}>
             {contentLeft}
@@ -114,7 +111,7 @@ export const MultipleSelect = (props: MultipleSelectProps) => {
             <FaChevronDown size={16} />
           </div>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" sideOffset={8} usePortal={!isStatic}>
+        <DropdownMenuContent align="end" sideOffset={8}>
           <Select
             controlShouldRenderValue={false}
             backspaceRemovesValue={false}

@@ -19,9 +19,19 @@
 }
 
 .AvatarFallback {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: var(--avatar-width);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: var(--color-fill-strong);
+}
+
+.UserIcon {
+  color: var(--color-text-assistive);
+  height: 50%;
+  width: 50%;
 }
