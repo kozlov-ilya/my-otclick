@@ -4,9 +4,13 @@ import { deletePostById } from "@/data/post";
 import { revalidatePath } from "next/cache";
 
 export const deletePost = async ({ postId }: { postId: number }) => {
-  const post = await deletePostById(postId);
+  try {
+    const post = await deletePostById(postId);
 
-  revalidatePath("/");
+    revalidatePath("/");
 
-  return post;
+    return post;
+  } catch (error) {
+    throw error;
+  }
 };

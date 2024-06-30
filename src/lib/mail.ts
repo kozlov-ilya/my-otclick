@@ -8,7 +8,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   const confirmLink = `${domain}/auth/new-verification?token=${token}`;
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "mail@myotclick.ru",
     to: email,
     subject: "Email confirmation",
     text: "",
@@ -20,7 +20,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
   const resetLink = `${domain}/auth/new-password?token=${token}`;
 
   await resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "mail@myotclick.ru",
     to: email,
     subject: "Password reset",
     text: "",

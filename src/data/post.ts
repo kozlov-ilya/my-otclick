@@ -56,9 +56,7 @@ export const getPostById = async (id: number) => {
 };
 
 export const deletePostById = async (id: number) => {
-  const post = await db.post.delete({ where: { id } });
-
-  return post;
+  await db.post.delete({ where: { id } });
 };
 
 export const getPostsByUserId = async (userId: string) => {

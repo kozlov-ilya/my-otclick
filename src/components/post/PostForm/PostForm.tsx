@@ -17,6 +17,7 @@ import { TagNameType } from "@/types/tag";
 import { useState, useTransition } from "react";
 import { editPost } from "@/actions/post/editPost";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
 
 export type PostFormType = z.infer<typeof PostSchema>;
 

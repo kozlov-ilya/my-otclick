@@ -57,13 +57,12 @@ export const PostFeed = (props: PostFeedProps) => {
 
   const { data, fetchNextPage, hasNextPage, isLoading, refetch, isRefetching } =
     useInfiniteQuery({
-      queryKey: ["posts"],
+      queryKey: [postsType],
       queryFn: async ({ pageParam }: { pageParam: number | undefined }) => {
         const posts = await getNextPosts(pageParam);
 
         return posts;
       },
-      refetchOnMount: "always",
       getNextPageParam: (lastPage) => lastPage.nextCursor,
       initialPageParam: undefined,
     });
