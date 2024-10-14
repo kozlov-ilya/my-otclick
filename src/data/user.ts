@@ -14,7 +14,23 @@ export const createUser = async ({
   const username = await generateUsername();
 
   return db.user.create({
-    data: { email, password: hashedPassword, name, username },
+    data: {
+      email,
+      password: hashedPassword,
+      name,
+      username,
+      watchedTags: {
+        connect: [
+          { name: "education" },
+          { name: "science" },
+          { name: "event" },
+          { name: "job" },
+          { name: "project" },
+          { name: "entertainment" },
+          { name: "other" },
+        ],
+      },
+    },
   });
 };
 
